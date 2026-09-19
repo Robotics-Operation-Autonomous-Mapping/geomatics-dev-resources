@@ -28,6 +28,6 @@ Tier docs stay short: reading list + exercises. Link official docs (ROS 2, Kalib
 
 ## Data
 
-- Use sample bags from the shared drive for CP1–CP2 ([data.md](data.md)).
+- Download public sample data yourself for CP1–CP2 ([data.md](data.md)); do not expect bags in git.
 - CP3 requires a real collection run following [field-checklist.md](field-checklist.md).
 - Never commit full rosbags to this repo; only tiny fixtures under `reference/` if needed.

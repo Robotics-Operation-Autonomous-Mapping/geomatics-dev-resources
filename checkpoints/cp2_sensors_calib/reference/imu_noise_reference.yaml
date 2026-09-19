@@ -1,5 +1,6 @@
-# Placeholder reference — replace with values from the official static IMU sample
-# when data is published on the shared drive.
+# Placeholder reference — not KITTI ground truth.
+# KITTI OXTS is a moving vehicle, so Allan numbers will not look like a static IMU
+# datasheet. Oral: explain why. Replace this file if the team publishes a static log.
 accelerometer:
   noise_density: 0.0
   random_walk: 0.0

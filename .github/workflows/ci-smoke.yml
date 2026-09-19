@@ -40,7 +40,8 @@ jobs:
             checkpoints/cp2_sensors_calib/scripts/allan_variance.py \
             checkpoints/cp2_sensors_calib/scripts/gnss_to_enu.py \
             checkpoints/cp2_sensors_calib/scripts/check_tolerances.py \
-            checkpoints/cp3_slam_eval/scripts/preprocess_bag.py
+            checkpoints/cp3_slam_eval/scripts/preprocess_bag.py \
+            scripts/kitti_oxts_prepare.py
 
       - name: CP1 / CP2 structural smoke
         run: |

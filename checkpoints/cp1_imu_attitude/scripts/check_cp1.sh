@@ -31,7 +31,7 @@ if [[ -d "${BAG}" ]]; then
     ros2 bag info "${BAG}" >/dev/null && echo "[OK] ros2 bag info succeeded" || echo "[WARN] ros2 bag info failed"
   fi
 else
-  echo "[WARN] no sample bag at ${BAG} — run scripts/download_sample_data.sh"
+  echo "[WARN] no sample bag at ${BAG} — run ./scripts/download_sample_data.sh (and pip install rosbags if the bag step was skipped)"
 fi
 
 if [[ "${fail}" -ne 0 ]]; then

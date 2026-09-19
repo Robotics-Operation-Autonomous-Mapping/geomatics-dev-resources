@@ -14,7 +14,7 @@ From provided raw data, complete four deliverables. Thresholds are objective.
 | Check | Pass when |
 |-------|-----------|
 | Scripts | `scripts/run_cp2.sh` runs end-to-end (skips missing optional stages with clear WARN) |
-| Numbers | Within tolerance of [`reference/tolerances.yaml`](reference/tolerances.yaml) |
+| Numbers | YAML schema + Allan plot exist. Numeric match to `imu_noise_reference.yaml` is **not** required on the public KITTI moving log (see oral). |
 | Kalibr | RMS reprojection ≤ **0.5 px** |
 | Autoware | Sensor kit launches; localization produces pose on sample bag |
 | Oral | Explain each result — [rubric](../../docs/reviewer-rubric.md) |
@@ -37,12 +37,12 @@ sensor_kit/              # Autoware description stubs (also under templates/)
 
 ## Data
 
-See [docs/data.md](../../docs/data.md). Expected paths after download:
+See [docs/data.md](../../docs/data.md). You download these yourself (`./scripts/download_sample_data.sh`):
 
-- `data/cp2/imu_static`
-- `data/cp2/gnss_raw`
-- `data/cp2/kalibr_cam_imu`
-- `data/cp2/autoware_localize`
+- `data/cp2/imu_static` — KITTI OXTS IMU CSV (moving vehicle; not a true static Allan log)
+- `data/cp2/gnss_raw` — KITTI OXTS lat/lon CSV
+- `data/cp2/kalibr_cam_imu` — install ETH Zurich EuRoC bags yourself ([Kalibr wiki](https://github.com/ethz-asl/kalibr/wiki/Downloads))
+- `data/cp2/autoware_localize` — `./scripts/download_sample_data.sh cp2-autoware`
 
 ## Run
 

@@ -81,10 +81,20 @@ Mount this repo into the container and run `verify_env.sh` inside.
 
 ## Clone this repo
 
+The repo is **private**. You must be a member of
+[Robotics-Operation-Autonomous-Mapping](https://github.com/Robotics-Operation-Autonomous-Mapping/).
+If `git clone` returns 404, you are not logged in as an account that has access.
+
 ```bash
-git clone <TODO:REPO_URL> roam-onboarding
+git clone https://github.com/Robotics-Operation-Autonomous-Mapping/geomatics-dev-resources.git roam-onboarding
 cd roam-onboarding
 git checkout -b setup/<yourname>
+```
+
+SSH:
+
+```bash
+git clone git@github.com:Robotics-Operation-Autonomous-Mapping/geomatics-dev-resources.git roam-onboarding
 ```
 
 If the team adds submodules later:
@@ -95,10 +105,20 @@ git submodule update --init --recursive
 
 ## Sample data
 
-Configure `TODO:SHARED_DRIVE_URL` in [data.md](data.md), then:
+You pull **public** datasets yourself (curl + checksum). There is no shared drive.
 
 ```bash
-./scripts/download_sample_data.sh
+./scripts/download_sample_data.sh                 # KITTI GPS/IMU ~8 MB
+./scripts/download_sample_data.sh --print-commands core   # read the curl first
+```
+
+Details and later Kalibr / Autoware downloads: [data.md](data.md).
+
+Optional, so CP1 can `ros2 bag play` a converted KITTI IMU bag:
+
+```bash
+python3 -m pip install --user rosbags
+./scripts/download_sample_data.sh    # re-run if the bag step was skipped
 ```
 
 ## Next

@@ -29,11 +29,12 @@ Use sample bags from [data.md](data.md) where applicable.
 | Prompt | Expect |
 |--------|--------|
 | Explain one Allan plot feature (angle random walk / bias instability) | Correct region / units |
+| Why is the public KITTI OXTS log a weak Allan dataset? | Vehicle is moving; Allan wants a long **static** IMU |
 | Why ENU origin choice matters | Relative traj; singularity / wrapping not the main issue — origin & lever arm |
 | Good vs bad Kalibr result | Reprojection, consistency, time delay sanity |
 | What is extrinsic vs intrinsic here? | Clear separation |
 | Which frames did you put in the Autoware sensor description? | Matches their YAML |
-| Triton2 / event cam (if used): where do timestamps come from? | Pipeline-aware answer |
+| Camera / IMU stamps: header vs receive time? | Knows which clock the pipeline uses |
 
 **Fail if:** numbers present but unexplained; cannot say what tolerance means; stack launch was copy-paste only.
 

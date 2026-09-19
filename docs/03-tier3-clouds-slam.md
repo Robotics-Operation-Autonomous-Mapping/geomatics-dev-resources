@@ -41,6 +41,7 @@ Reading list + exercises. Pass via [Checkpoint 3](../checkpoints/cp3_slam_eval/)
 ### Exercises
 
 1. Run KISS-ICP and FAST-LIO2 on the same bag with team starter configs under CP3.
+   (Dry-run on a public LiDAR bag from those projects' READMEs is fine; the checkpoint still needs your field collect.)
 2. For each: list one failure mode you observed or would expect (degeneracy, motion distortion, bad extrinsic, etc.).
 
 ## Evaluation

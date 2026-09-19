@@ -45,4 +45,4 @@ export CP3_GT=/path/to/gt_tum.txt  # TUM trajectory from GNSS/RTK
 ./checkpoints/cp3_slam_eval/scripts/run_cp3.sh
 ```
 
-Do **not** commit full bags. Commit configs, scripts, metrics, and report only.
+Do **not** commit full bags. Commit configs, scripts, metrics, and report only. Keep the bag under `data/cp3/<your_run>/` (gitignored) and share it with your reviewer outside git.

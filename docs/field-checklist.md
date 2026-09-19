@@ -30,7 +30,7 @@ Print or keep on phone. **Do not start recording until Pre-run is complete.**
 - [ ] Stop record cleanly; confirm bag playable (`ros2 bag info`)
 - [ ] Copy bag + metadata YAML + event log off the robot **before** wiping
 - [ ] Checksum or size note for transfer integrity
-- [ ] Upload to shared drive under `cp3/<yourname>_<date>/` (`TODO:SHARED_DRIVE_URL`)
+- [ ] Keep a local copy of bag + metadata + event log; share with your reviewer by the team’s usual file transfer — **not** git
 - [ ] Fill CP3 report header (platform, site, weather, issues)
 - [ ] Do **not** commit the bag to git
 

@@ -1,0 +1,7 @@
+# EuRoC Aprilgrid (6x6), as used with the Kalibr imu_april / cam_april bags.
+# Source: ETH ASL EuRoC calibration datasets / Kalibr wiki Downloads.
+target_type: 'aprilgrid'
+tagCols: 6
+tagRows: 6
+tagSize: 0.088
+tagSpacing: 0.3

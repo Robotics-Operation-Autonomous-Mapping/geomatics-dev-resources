@@ -68,7 +68,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.input is None:
         p.error('--input is required unless --help-schema is set')
 
-    # TODO(student): load IMU samples from --input (CSV columns or bag topic)
+    # TODO(student): load IMU samples from --input
+    # CSV from scripts/kitti_oxts_prepare.py: t,ax,ay,az,gx,gy,gz  (or a rosbag2 dir)
     print(f'[stub] would load IMU from {args.input}', file=sys.stderr)
     try:
         tau, sigma = compute_allan_deviation([], 0.01)

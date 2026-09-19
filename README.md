@@ -2,7 +2,9 @@
 
 Onboarding track for the ROAM geomatics team: foundations → sensors/calibration/Autoware → point clouds, data collection, and SLAM.
 
-This repo holds **docs**, **checkpoint scaffolds**, and **templates**. Sample rosbags live on the shared drive (see [docs/data.md](docs/data.md)) so you can start without hardware.
+This repo holds **docs**, **checkpoint scaffolds**, and **templates**. Sample data is **not** in git — you download public datasets yourself ([docs/data.md](docs/data.md)) so you learn official install (curl, checksum, unpack).
+
+The GitHub repo is **private**. Ask a lead to add you to the [Robotics-Operation-Autonomous-Mapping](https://github.com/Robotics-Operation-Autonomous-Mapping/) org before cloning.
 
 ## Quick start
 
@@ -11,10 +13,16 @@ This repo holds **docs**, **checkpoint scaffolds**, and **templates**. Sample ro
 3. Work through tiers in order; pass each checkpoint before moving on
 
 ```bash
-git clone <TODO:REPO_URL> roam-onboarding
+git clone https://github.com/Robotics-Operation-Autonomous-Mapping/geomatics-dev-resources.git roam-onboarding
 cd roam-onboarding
 ./scripts/verify_env.sh
-./scripts/download_sample_data.sh   # after shared-drive URL is configured
+./scripts/download_sample_data.sh          # KITTI GPS/IMU ~8 MB
+```
+
+SSH if you use keys:
+
+```bash
+git clone git@github.com:Robotics-Operation-Autonomous-Mapping/geomatics-dev-resources.git roam-onboarding
 ```
 
 ## Track map
@@ -43,17 +51,12 @@ Supported developer laptops:
 
 Match Autoware Docker tags to your distro (`universe-humble` / `universe-jazzy`). Maintainers: re-verify Autoware support before major doc updates — see the checklist in [docs/00-setup.md](docs/00-setup.md).
 
-## Maintainer TODOs
+## Leads: private repo
 
-Fill these before onboarding a cohort:
-
-| Token | Meaning |
-|-------|---------|
-| `TODO:REPO_URL` | Public/private GitHub clone URL for this repo |
-| `TODO:SHARED_DRIVE_URL` | Shared drive root for rosbags ([docs/data.md](docs/data.md)) |
-| `TODO:GITHUB_ORG` | GitHub org or team that owns PRs |
-| `TODO:TRITON2_PIPELINE_URL` | Link to the team's Triton2 event-camera pipeline docs/repo |
+- Add new members to the GitHub org so they can clone.
+- Protect `main` (PR required; no direct pushes).
+- Do not vendor datasets in this repo; point people at [docs/data.md](docs/data.md).
 
 ## License
 
-Internal ROAM training material. Ask leads before redistributing outside the team.
+Internal ROAM training material. Ask leads before redistributing outside the team. Public datasets you download keep their original licenses — cite them.

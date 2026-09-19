@@ -49,7 +49,8 @@ source /opt/ros/$ROS_DISTRO/setup.bash
 colcon build --packages-select cp1_imu_attitude
 source install/setup.bash
 
-# play bag (after ./scripts/download_sample_data.sh)
+# play bag (after ./scripts/download_sample_data.sh — topic is /imu/data)
+# python3 -m pip install --user rosbags   # if imu_raw/ was not created
 ros2 bag play ../../roam-onboarding/data/cp1/imu_raw --clock &
 ros2 launch cp1_imu_attitude attitude.launch.py
 # RViz2: add TF; set Fixed Frame to base_link (or as documented in your PR)
@@ -67,7 +68,7 @@ ros2 launch cp1_imu_attitude attitude.launch.py imu_topic:=/imu/data
 ./checkpoints/cp1_imu_attitude/scripts/check_cp1.sh
 ```
 
-The smoke script checks that the package is importable / launch file exists. Full bag playback checks are manual or CI when data is present.
+The smoke script checks that the package is importable / launch file exists. Full bag playback checks are manual or CI when data is present. Install `rosbags` if the download script skipped writing `data/cp1/imu_raw`.
 
 ## What you implement
 

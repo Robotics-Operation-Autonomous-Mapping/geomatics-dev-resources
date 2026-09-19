@@ -45,12 +45,12 @@ Reading list + exercises. Complete [Checkpoint 2](../checkpoints/cp2_sensors_cal
 
 - Pinhole + distortion: OpenCV calib3d (link above)
 - Intrinsic calibration with a target; reprojection error meaning
-- **Event cameras / Triton2:** read your team pipeline — `TODO:TRITON2_PIPELINE_URL` — plus a short intro such as [Metavision concepts](https://docs.prophesee.ai/stable/concepts.html) (or equivalent for your sensor)
+- Image timestamps: `header.stamp` vs receive time; rolling vs global shutter (OpenCV / driver docs for your camera)
 
 ### Exercises
 
 1. Calibrate a pinhole camera with a printed target; report RMS reprojection error.
-2. For Triton2: list which topics/files the team pipeline expects and where timestamps come from (link the pipeline doc).
+2. From a bag, compare camera `header.stamp` vs receive time and write three sentences on what you saw (reuse the time-sync exercise if you already did it).
 
 ## Camera–IMU extrinsics and time offset
 

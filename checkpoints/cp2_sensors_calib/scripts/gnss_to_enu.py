@@ -15,7 +15,8 @@ from pathlib import Path
 def parse_gnss(path: Path) -> list[dict]:
     """Return list of dicts with keys: t, lat, lon, alt, fix_quality.
 
-    TODO(student): support NMEA GGA and/or a simple CSV schema.
+    TODO(student): support NMEA GGA and/or the KITTI CSV from docs/data.md
+    (columns t,lat,lon,alt,fix_quality,numsats).
     """
     raise NotImplementedError('Implement parse_gnss')
 

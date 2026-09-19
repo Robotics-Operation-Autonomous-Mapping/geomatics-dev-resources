@@ -20,4 +20,6 @@ Official context: [Autoware documentation](https://autowarefoundation.github.io/
 - [ ] `use_sim_time:=true` when playing the bag
 - [ ] Localization node publishes pose (NDT or team default)
 
-Sample data: `data/cp2/autoware_localize/` (`TODO:SHARED_DRIVE_URL`).
+Sample data: `data/cp2/autoware_localize/` after `./scripts/download_sample_data.sh cp2-autoware`
+(`sample-map-rosbag/` + `sample-rosbag/`). Official demo:
+[Autoware rosbag replay](https://autowarefoundation.github.io/autoware-documentation/main/demos/rosbag-replay-simulation/).

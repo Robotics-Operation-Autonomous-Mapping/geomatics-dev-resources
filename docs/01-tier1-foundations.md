@@ -40,7 +40,7 @@ Short reading list + exercises. Official docs win over tutorials when they disag
 
 ### Exercises
 
-1. Fork/clone this repo, create `cp1/<you>-practice`, commit a trivial doc typo fix on a branch, open a PR (draft OK).
+1. Clone this private org repo (you need org access), create `cp1/<you>-practice`, commit a trivial doc typo fix on a branch, open a PR (draft OK).
 2. Intentionally create a merge conflict with a teammate on a scratch branch; resolve and rebase onto `main`.
 3. Add a `.gitignore` entry for `data/` and confirm `git status` ignores a dummy bag folder.
 
