@@ -1,0 +1,27 @@
+# Local sample data (shared drive downloads)
+data/
+!data/README.txt
+
+# ROS / Python
+build/
+install/
+log/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Checkpoint outputs
+checkpoints/**/output/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.bag
+*.mcap
+!**/reference/**

@@ -1,0 +1,8 @@
+# Objective thresholds for CP2
+
+kalibr_reprojection_rms_px: 0.5
+imu_noise_relative: 0.5   # |student-ref| <= max(|ref|*rel, abs_floor)
+imu_noise_abs_floor: 1.0e-6
+
+# GNSS: plot + CSV must exist; numeric GT optional until reference traj is published
+gnss_require_plot: true

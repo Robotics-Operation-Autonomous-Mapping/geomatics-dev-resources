@@ -1,0 +1,75 @@
+name: CI smoke
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        # Humble on 22.04 native; Jazzy checked via syntax-only on same runner
+        # (full Jazzy image optional when team adds containerized builds).
+        include:
+          - ros_distro: humble
+            use_ros: true
+          - ros_distro: jazzy
+            use_ros: false
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Shell syntax
+        run: |
+          set -e
+          for f in scripts/*.sh checkpoints/*/scripts/*.sh; do
+            [[ -f "$f" ]] || continue
+            bash -n "$f"
+            echo "OK $f"
+          done
+
+      - name: Python syntax
+        run: |
+          set -e
+          PY=$(command -v python3 || command -v python)
+          "$PY" -m py_compile \
+            checkpoints/cp1_imu_attitude/cp1_imu_attitude/attitude_node.py \
+            checkpoints/cp2_sensors_calib/scripts/allan_variance.py \
+            checkpoints/cp2_sensors_calib/scripts/gnss_to_enu.py \
+            checkpoints/cp2_sensors_calib/scripts/check_tolerances.py \
+            checkpoints/cp3_slam_eval/scripts/preprocess_bag.py
+
+      - name: CP1 / CP2 structural smoke
+        run: |
+          PY=$(command -v python3 || command -v python)
+          bash checkpoints/cp1_imu_attitude/scripts/check_cp1.sh
+          "$PY" checkpoints/cp2_sensors_calib/scripts/allan_variance.py --help-schema
+          "$PY" checkpoints/cp2_sensors_calib/scripts/gnss_to_enu.py --help
+
+      - name: Setup ROS 2 Humble (matrix)
+        if: matrix.use_ros
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: humble
+
+      - name: Colcon build CP1 stub (Humble)
+        if: matrix.use_ros
+        shell: bash
+        run: |
+          set -euo pipefail
+          source /opt/ros/humble/setup.bash
+          mkdir -p /tmp/roam_ws/src
+          ln -sfn "$GITHUB_WORKSPACE/checkpoints/cp1_imu_attitude" /tmp/roam_ws/src/cp1_imu_attitude
+          cd /tmp/roam_ws
+          rosdep update || true
+          rosdep install --from-paths src -y --ignore-src || true
+          colcon build --packages-select cp1_imu_attitude
+
+      - name: Jazzy note
+        if: ${{ !matrix.use_ros }}
+        run: |
+          echo "Jazzy: syntax smoke only on ubuntu-22.04 runner."
+          echo "Build on Ubuntu 24.04 + Jazzy locally or add a jazzy container job later."

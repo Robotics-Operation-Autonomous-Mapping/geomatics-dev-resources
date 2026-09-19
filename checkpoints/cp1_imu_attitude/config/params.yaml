@@ -1,0 +1,5 @@
+attitude_node:
+  ros__parameters:
+    imu_topic: /imu/data
+    parent_frame: base_link
+    child_frame: imu_attitude

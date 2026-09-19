@@ -1,0 +1,14 @@
+# Placeholder reference — replace with values from the official static IMU sample
+# when data is published on the shared drive.
+accelerometer:
+  noise_density: 0.0
+  random_walk: 0.0
+  units:
+    noise_density: m/s^2/sqrt(Hz)
+    random_walk: m/s^3/sqrt(Hz)
+gyroscope:
+  noise_density: 0.0
+  random_walk: 0.0
+  units:
+    noise_density: rad/s/sqrt(Hz)
+    random_walk: rad/s^2/sqrt(Hz)

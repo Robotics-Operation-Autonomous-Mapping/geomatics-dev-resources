@@ -1,0 +1,12 @@
+# Starter hints for KISS-ICP — replace with a real config from upstream examples.
+# https://github.com/PRBonn/kiss-icp
+
+out_dir: output/kiss_icp
+# topic: /lidar/points
+# deskew: true
+# max_range: 80.0
+# min_range: 1.0
+
+notes: |
+  Copy a working config from the KISS-ICP repo for your sensor and commit
+  the tuned version you actually used for the comparison table.

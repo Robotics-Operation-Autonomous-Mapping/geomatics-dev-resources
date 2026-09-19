@@ -1,0 +1,10 @@
+# Starter hints for FAST-LIO2 — map keys to the package's YAML for your LiDAR/IMU.
+# https://github.com/hku-mars/FAST_LIO
+
+# lid_topic: /lidar/points
+# imu_topic: /imu/data
+# extrinsics: fill from CP2 calibration
+
+notes: |
+  Point this file at the real FAST-LIO config your platform uses.
+  Document any tuning (cov, filter size) in REPORT.md.
