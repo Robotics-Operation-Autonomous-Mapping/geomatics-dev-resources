@@ -25,3 +25,4 @@ Thumbs.db
 *.bag
 *.mcap
 !**/reference/**
+data/
