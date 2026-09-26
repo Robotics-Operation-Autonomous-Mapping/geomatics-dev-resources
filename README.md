@@ -54,7 +54,7 @@ Match Autoware Docker tags to your distro (`universe-humble` / `universe-jazzy`)
 ## Leads: private repo
 
 - Add new members to the GitHub org so they can clone.
-- Protect `main` (PR required; no direct pushes).
+- Protect `main` (PR required; no direct pushes)!
 - Do not vendor datasets in this repo; point people at [docs/data.md](docs/data.md).
 
 ## License
