@@ -4,6 +4,8 @@ Applies to every tier and checkpoint.
 
 ## Git
 
+Short teaching script: [git-github-workshop.md](git-github-workshop.md) (~45 min).
+
 - **No direct pushes to `main`.** Branch → PR → review → merge.
 - Use meaningful branch names: `cp1/<name>-imu-attitude`, `cp2/<name>-allan`, etc.
 - Resolve **at least one** review comment before asking for merge (Checkpoint 1+).
